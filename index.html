@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محمد مبین روزبهانی/طراح سایت</title>
+  <link rel="stylesheet" href="style-fixed.css">
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <header class="header">
+    <h2 class="logo">محمد مبین روزبهانی</h2>
+    <nav>
+      <a href="index.html">خانه</a>
+      <a href="cantact.html">درباره</a>
+      <a href="servis.html">خدمات ها</a>
+      <a href="about.html">ارتباط با ما</a>
+        <a href="faq.html">FAQ</a>
+    </nav>
+  </header>
+ <section class="hero">
+  <div class="hero-text">
+    <h1>
+  <span class="static-text">سلام من</span>
+  <span id="typing"></span>
+</h1>
+    <p>طراح و توسعه دهنده سایت</p>
+    <a href="#" class="hero-btn">شروع همکاری</a>
+  </div>
+
+  <div class="hero-img">
+    <img src="https://mc-heads.net/player/Mobinr">
+  </div>
+</section>
+
+<section class="why-us reveal">
+  <div class="why-container">
+
+    <div class="why-card">سرعت بالا</div>
+    <div class="why-card">طراحی مدرن</div>
+    <div class="why-card">کدنویسی تمیز</div>
+
+  </div>
+</section>
+<section class="services reveal">
+
+  <h2>Services</h2>
+
+  <div class="services-container">
+
+    <div class="service-card">
+      <h3>طراحی سایت</h3>
+      <p>سایت مدرن و سریع</p>
+    </div>
+
+    <div class="service-card">
+      <h3>طراحی ریسپانسیو</h3>
+      <p>موبایل، تبلت، دسکتاپ</p>
+    </div>
+
+    <div class="service-card">
+      <h3>UI/UX</h3>
+      <p>طراحی حرفه‌ای</p>
+    </div>
+  </div>
+</section>
+  </div>
+  <script>
+const texts = [
+  "مبین هستم",
+  "طراح سایت هستم",
+  "فرانت‌اند دولوپر هستم",
+];
+
+let speed = 100;
+let index = 0;
+let textIndex = 0;
+let currentText = "";
+let letter = "";
+
+function type(){
+  if(index < texts.length){
+    
+    if(textIndex < texts[index].length){
+      letter += texts[index].charAt(textIndex);
+      document.getElementById("typing").textContent = letter;
+      textIndex++;
+      setTimeout(type, speed);
+    }
+    else{
+      setTimeout(erase, 1500);
+    }
+
+  }
+}
+
+function erase(){
+  if(textIndex > 0){
+    letter = letter.slice(0,-1);
+    document.getElementById("typing").textContent = letter;
+    textIndex--;
+    setTimeout(erase, speed/2);
+  }
+  else{
+    index++;
+    if(index >= texts.length){
+      index = 0;
+    }
+    setTimeout(type, 500);
+  }
+}
+
+type();
+</script>
+<script>
+function reveal(){
+  const reveals = document.querySelectorAll(".reveal");
+
+  for(let i = 0; i < reveals.length; i++){
+    let windowHeight = window.innerHeight;
+    let elementTop = reveals[i].getBoundingClientRect().top;
+    let elementVisible = 100;
+
+    if(elementTop < windowHeight - elementVisible){
+      reveals[i].classList.add("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script>
+tsParticles.load("particles-js", {
+  background: {
+    color: "transparent"
+  },
+  particles: {
+    number: {
+      value: 60
+    },
+    color: {
+      value: "#ff0000"
+    },
+    links: {
+      enable: true,
+      color: "#ff0000",
+      distance: 150
+    },
+    move: {
+      enable: true,
+      speed: 2
+    },
+    size: {
+      value: 3
+    },
+    opacity: {
+      value: 0.5
+    }
+  }
+});
+</script>
+</body>
+</html>
+<section class="portfolio reveal">
+
+  <h2 class="section-title">نمونه کارها</h2>
+
+  <div class="portfolio-container">
+
+    <div class="portfolio-card">
+      <h3>پروژه ۱</h3>
+      <p>نمونه طراحی رابط کاربری</p>
+      <a href="#" class="portfolio-btn">مشاهده پروژه</a>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>پروژه ۲</h3>
+      <p>نمونه سایت شرکتی</p>
+      <a href="#" class="portfolio-btn">مشاهده پروژه</a>
+    </div>
+
+    <div class="portfolio-card">
+      <h3>پروژه ۳</h3>
+      <p>نمونه انیمیشن و تحرک سازی</p>
+      <a href="#" class="portfolio-btn">مشاهده پروژه</a>
+    </div>
+
+  </div>
+
+</section>
+<footer class="footer">
+
+  <div class="footer-content">
+
+    <h2>Mobin Dev</h2>
+    <p>طراحی و توسعه انواع سایت های مدرن 💻</p>
+
+    <div class="footer-socials">
+      <a href="#">تلگرام</a>
+      <a href="#">اینستاگرام</a>
+      <a href="#">گیت هاب</a>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© 2026 تمامی حقوق محفوظ است | Mobin</p>
+  </div>
+
+</footer>
